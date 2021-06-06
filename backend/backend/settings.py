@@ -153,7 +153,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 FILE_UPLOAD_PERMISSIONS=0o640
 
-# AUTH_USER_MODEL = 'accounts.UserAccount'
+AUTH_USER_MODEL = 'accounts.UserAccount'
 
 # try:
 #     from .local_settings import *
