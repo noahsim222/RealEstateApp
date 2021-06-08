@@ -10,7 +10,7 @@ from datetime import datetime, timezone, timedelta
 # Create your views here.
 
 
-class ListingsView(APIView):
+class ListingsView(ListAPIView):
     queryset = Listing.objects.order_by('-list_date').filter(is_published = True)
     permission_classes = (permissions.AllowAny, )
     serializer_class = ListingSerializer
@@ -24,8 +24,8 @@ class ListingView(RetrieveAPIView):
 
 
 class SearchView(APIView):
-    permission_classes = (permissions.AllowAny, )
     serializer_class = ListingSerializer
+    permission_classes = (permissions.AllowAny, )
 
     def post(self, request, format=None):
         queryset = Listing.objects.order_by('-list_date').filter(is_published = True)
