@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'accounts',
-    'realtors'
+    'realtors',
+    'listings'
 ]
 
 MIDDLEWARE = [
