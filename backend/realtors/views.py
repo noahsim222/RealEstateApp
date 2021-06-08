@@ -6,7 +6,7 @@ from .serializers import RealtorSerializer
 
 # Create your views here.
 
-# Getting a List of Realtors
+""" Getting a List of Realtors """
 class RealtorListView(ListAPIView):
     permission_classes = (permission.AllowAny, )
     queryset = Realtor.objects.all()
@@ -15,7 +15,15 @@ class RealtorListView(ListAPIView):
 
 
 
-# Retrieving a single Realtor by Id
+""" Retrieving a single Realtor by Id """
 class RealtorView(RetrieveAPIView):
     queryset = Realtor.objects.all()
     serializer_class = RealtorSerializer
+
+
+""" Getting a list of Top Sellers """
+class TopSellerView(ListAPIView):
+    permission_classes = (permission.AllowAny, )
+    queryset = Realtors.objects.filter(top_seller=True)
+    serializer_class = RealtorSerializer
+    pagination_class = None
