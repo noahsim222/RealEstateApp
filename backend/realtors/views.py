@@ -8,7 +8,7 @@ from .serializers import RealtorSerializer
 
 """ Getting a List of Realtors """
 class RealtorListView(ListAPIView):
-    permission_classes = (permission.AllowAny, )
+    permission_classes = (permissions.AllowAny, )
     queryset = Realtor.objects.all()
     serializer_class = RealtorSerializer
     pagination_class = None  #Default list will be paginated
@@ -23,7 +23,7 @@ class RealtorView(RetrieveAPIView):
 
 """ Getting a list of Top Sellers """
 class TopSellerView(ListAPIView):
-    permission_classes = (permission.AllowAny, )
-    queryset = Realtors.objects.filter(top_seller=True)
+    permission_classes = (permissions.AllowAny, )
+    queryset = Realtor.objects.filter(top_seller=True)
     serializer_class = RealtorSerializer
     pagination_class = None
