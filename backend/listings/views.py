@@ -11,14 +11,14 @@ from datetime import datetime, timezone, timedelta
 
 
 class ListingsView(APIView):
-    queryset = Listings.objects.order_by('-list_date').filter(is_published = True)
+    queryset = Listing.objects.order_by('-list_date').filter(is_published = True)
     permission_classes = (permissions.AllowAny, )
     serializer_class = ListingSerializer
     lookup_field = 'slug'
 
 
 class ListingView(RetrieveAPIView):
-    queryset = Listings.objects.order_by('-list_date').filter(is_published = True)
+    queryset = Listing.objects.order_by('-list_date').filter(is_published = True)
     serializer_class = ListingDetailSerializer
     lookup_field = 'slug'
 
@@ -28,7 +28,7 @@ class SearchView(APIView):
     serializer_class = ListingSerializer
 
     def post(self, request, format=None):
-        queryset = Listings.objects.order_by('-list_date').filter(is_published = True)
+        queryset = Listing.objects.order_by('-list_date').filter(is_published = True)
         data = self.request.data 
 
         sale_type = data['sale_type']
