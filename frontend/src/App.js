@@ -10,6 +10,8 @@ import Login from "./containers/Login";
 import SignUp from "./containers/SignUp";
 import NotFound from "./components/NotFound";
 
+import "./sass/main.scss";
+
 function App() {
 	return (
 		<Router>
