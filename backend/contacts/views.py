@@ -18,7 +18,7 @@ class ContactCreateView(APIView):
                 data['subject'],
                 'Name: '
                 +data['name']
-                +'\nEmail:' 
+                +'\nEmail: ' 
                 +data['email']
                 + '\n\nMessage: \n'
                 +data['message'],
@@ -45,3 +45,9 @@ class ContactCreateView(APIView):
 
 
 
+# {
+#     "name": "Aakriti",
+#     "email": "aakritigupta1435@gmail.com",
+#     "subject": "Looking frorward for you",
+#     "message": "Hey there! WhatsUp"
+# }
