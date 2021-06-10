@@ -8,6 +8,7 @@ import Listings from "./containers/Listings";
 import ListingDetail from "./containers/ListingDetail";
 import Login from "./containers/Login";
 import SignUp from "./containers/SignUp";
+import NotFound from "./components/NotFound";
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 					/>
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/signup" component={SignUp} />
+					<Route component={NotFound} />
 				</Switch>
 			</Layout>
 		</Router>
