@@ -250,7 +250,7 @@ function ListingForm(props) {
 							<option>4+</option>
 						</select>
 					</div>
-					<div className="listingform__section">
+					<div className="listingform__altsection">
 						<label
 							htmlFor="open_house"
 							className="listingform__label"
@@ -277,7 +277,7 @@ function ListingForm(props) {
 							/>
 						</div>
 					) : (
-						<button className="listingform__button listingfrom__button--primary">
+						<button className="listingform__button listingform__button--primary">
 							Save
 						</button>
 					)}
