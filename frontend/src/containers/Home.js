@@ -7,10 +7,43 @@ import Pagination from "../components/Pagination";
 function Home() {
 	const [listings, setListings] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [listingsPerPage, setListingsPerPage] = useState(1);
-	const [currentPage, setCurrentPage] = useState(1);
+	const [listingsPerPage, setListingsPerPage] = useState(3);
+	const [active, setActive] = useState(1);
 
-	return <div>Home</div>;
+	const indexOfLastListing = currentPage * listingsPerPage;
+	const indexOfFirstListing = indexOfLastListing - listingsPerPage;
+	const currentListings = listings.slice(
+		indexOfFirstListing,
+		indexOfLastListing
+	);
+
+	const visitPage = (page) => {
+		setCurrentPage(page);
+		setActive(page);
+	};
+
+	const previousNumber = () => {
+		if (currentPage !== 1) {
+			setCurrentPage(currentPage - 1);
+			setActive(currentPage - 1);
+		}
+	};
+
+	const nextNumber = () => {
+		if (currentPage !== Math.ceil(listings.length / 3)) {
+			setCurrentPage(currentPage + 1);
+			setActive(currentPage + 1);
+		}
+	};
+
+	return (
+		<main className="home">
+			<Helmet>
+				<title>Real Estate - Home</title>
+				<meta name="description" content="RealEstate HomePage" />
+			</Helmet>
+		</main>
+	);
 }
 
 export default Home;
