@@ -43,11 +43,3 @@ class ContactCreateView(APIView):
 
 
 
-
-
-# {
-#     "name": "Aakriti",
-#     "email": "aakritigupta1435@gmail.com",
-#     "subject": "Looking frorward for you",
-#     "message": "Hey there! WhatsUp"
-# }
