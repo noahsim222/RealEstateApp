@@ -42,6 +42,27 @@ function Home() {
 				<title>Real Estate - Home</title>
 				<meta name="description" content="RealEstate HomePage" />
 			</Helmet>
+			<section className="home__form">
+				<ListingForm setListings={setListings} />
+			</section>
+			<section className="home__listings">
+				<Listings listings={currentListings} />
+			</section>
+			<section className="home__pagination">
+				<div className="row">
+					{listings.length !== 0 ? (
+						<Pagination
+							itemsPerPage={listingsPerPage}
+							count={listings.length}
+							visitPage={visitPage}
+							previous={previousNumber}
+							next={nextNumber}
+							active={active}
+							setActive={setActive}
+						/>
+					) : null}
+				</div>
+			</section>
 		</main>
 	);
 }
